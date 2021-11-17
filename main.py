@@ -35,12 +35,14 @@ async def on_voice_state_update(member, before, after):
     if before.channel:
         await delete_empty_channel(before.channel)
 
-#Use this while hosting on replit
-#from keep_alive import keep_alive
-#import os
-#keep_alive()
-#client.run(os.environ['key'])
+#Uncomment below lines if you want to run bot on replit else comment them
 
-#Use this if you just want to just run the python file on your env
+"""from keep_alive import keep_alive
+import os
+keep_alive()
+client.run(os.environ['key'])"""
+
+#Uncomment below lines if you want to run bot on your machine else comment them
+
 from key import key
 client.run(key)
