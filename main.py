@@ -23,10 +23,25 @@ async def delete_empty_channel(channel):
     if(str(channel) in new_channels.values() and len(channel.members) == 0):
         await channel.delete()
 
+async def delete_channels(ctx):
+    category = discord.utils.get(ctx.guild.categories, name = category_name)
+    channels = category.channels 
+
+    for channel in channels: 
+        try:
+            await channel.delete() 
+        except AttributeError: 
+            pass
+    await category.delete()
+
 
 @client.command()
 async def setup(ctx):
     await setup_channels(ctx)
+
+@client.command()
+async def delete(ctx):
+    await delete_channels(ctx)
     
 @client.event
 async def on_voice_state_update(member, before, after):
