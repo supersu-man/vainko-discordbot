@@ -46,11 +46,13 @@ async def delete_all(ctx):
     await category.delete()
 
 @client.command()
+@commands.has_permissions(administrator=True)
 async def setup(ctx):
     category = await get_category(ctx)
     await setup_channels(ctx, category)
 
 @client.command()
+@commands.has_permissions(administrator=True)
 async def delete(ctx):
     await delete_all(ctx)
 
