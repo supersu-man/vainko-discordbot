@@ -1,7 +1,20 @@
 import { Message, VoiceState, Client, Intents } from "discord.js";
 import { categoryName, channels } from "./config";
+import express from "express"
 import dotenv from 'dotenv';
 dotenv.config();
+
+
+var app = express();
+app.set('port', (process.env.PORT || 5000));
+
+//For avoidong Heroku $PORT error
+app.get('/', function(request : express.Request, response : express.Response) {
+    var result = 'App is running'
+    response.send(result);
+}).listen(app.get('port'), function() {
+    console.log('App is running, server is listening on port ', app.get('port'));
+});
 
 const client = new Client({
 	intents: [
