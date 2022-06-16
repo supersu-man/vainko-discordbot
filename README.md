@@ -21,8 +21,8 @@ And deletes the empty voice channels when left.
 - Fork the repository and clone the fork
 - Open the project in an IDE (VS Code)
 - Create a file called `.env` in project
-- Add `token='your_token_here'` line to `.env` file
+- Add `token='your__discord_bot_token_here'` to `.env` file
 - Create an app in Heroku
+- Add `token` var to your Heroku app with your Discord bot token
 - Add `HEROKU_API_KEY`, `HEROKU_APP_NAME` and `HEROKU_EMAIL` in GitHub secrets
-- Add `token` var in your Heroku account
-- Make a commit and push GitHub takes care of the rest.
+- Make a commit and push, GitHub takes care of the rest.
