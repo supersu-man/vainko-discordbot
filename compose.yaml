@@ -1,0 +1,9 @@
+services:
+  vainko:
+    container_name: vainko
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    restart: always
