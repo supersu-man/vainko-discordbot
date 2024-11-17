@@ -1,28 +1,23 @@
 # Vainko - Discord Bot
 
-Creates temporary voice channels.
+This bot creates temporary voice channels, which helps keep voice channel clutter to a minimum, especially in large Discord servers. 
 
-Very helpful to keep the clutter of voice channels away, like in huge discord servers.
-
-Automatically creates a new voice channel and moves the user to that newly created channel.
-And deletes the empty voice channels when left.
+It automatically generates a new voice channel and seamlessly moves the user to this newly created channel. Once the user leaves, the voice channel is promptly deleted.
 
 ## Instructions
 
-#### Run on your machine
-- Clone the repository 
-- Open the project in an IDE (VS Code)
-- Create a file called `.env` in project
-- Add `token='your_token_here'` line to `.env` file
-- Use `npm i` to install all the dependencies
+#### Configuration
+- Create .env file with `DISCORD_TOKEN` and `DISCORD_CLIENT_ID`
+- Make neessary changes to src/config.ts (optional)
+
+#### Development
+- Use `npm install` to install all the dependencies
+- Use `npm run dev` to run the bot
+
+#### Production
+- Use `npm install` to install the dependencies
+- Use `npm run build` to build
 - Use `npm run start` to run the bot
 
-#### Host on Heroku (using actions)
-- Fork the repository and clone the fork
-- Open the project in an IDE (VS Code)
-- Create a file called `.env` in project
-- Add `token='your__discord_bot_token_here'` to `.env` file
-- Create an app in Heroku
-- Add `token` var to your Heroku app with your Discord bot token
-- Add `HEROKU_API_KEY`, `HEROKU_APP_NAME` and `HEROKU_EMAIL` in GitHub secrets
-- Make a commit and push, GitHub takes care of the rest.
+#### Docker
+- Use `docker compose up --build -d` to build and run docker container
